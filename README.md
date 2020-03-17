@@ -1,2 +1,2 @@
 # Re0-Jenkins
-learn Jenkins
+Jenkins学习
