@@ -1,5 +1,6 @@
 # 无法识别mvn命令
-## 简述
+## 在Window上遇到
+### 简述
 Windows上安装使用Jenkins，环境变量中Path已配置有：java,mvn路径，但Jenkins无法识别mvn命令
 ```
 C:\Users\akira>mvn --version
@@ -10,7 +11,7 @@ Default locale: zh_CN, platform encoding: GBK
 OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 ```
 	
-## Pipeline：
+### Pipeline：
 ```
 pipeline {
    agent any
@@ -30,7 +31,7 @@ pipeline {
 }
 ```
 
-## 结果：
+### 结果：
 ```
 D:\Program Files (x86)\Jenkins\workspace\first_pipline>java -version 
 java version "1.8.0_131"
@@ -52,5 +53,15 @@ D:\Program Files (x86)\Jenkins\workspace\first_pipline>mvn --version
 [Pipeline] End of Pipeline
 ```
 
-## 原因：
+### 原因：
 Windows的环境变量配置有两种，用户变量与系统变量，Jenkins只会取系统变量，因此mvn的路径应配置到系统变量的Path中（配置后需要重启Jenkins）。
+
+
+## 在Linux上遇到
+同样在shell中可以执行 `mvn -v`命令，但在jenkins中无法识别mvn命令
+
+### 可能原因
+【Linux上好像只会识别： `/usr/bin/` 目录下的命令】
+
+### 解决办法
+创建软链接： `ln -s /usr/local/maven3/bin/mvn /usr/bin/mvn`
