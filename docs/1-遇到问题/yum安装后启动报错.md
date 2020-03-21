@@ -16,3 +16,4 @@ Starting Jenkins bash: /usr/bin/java: 没有那个文件或目录
 ```
 yum install java-1.8.0-openjdk-devel
 ```
+创建软连接应该也可以。
