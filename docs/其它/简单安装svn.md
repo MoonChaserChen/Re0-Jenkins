@@ -62,3 +62,8 @@ location ^~ /svn/ {
 ```
 https://your.domain/svn/kse-docs/
 ```
+
+9. 参考
+```
+http://svnbook.red-bean.com/en/1.6/svn.serverconfig.httpd.html#svn.serverconfig.httpd.authz
+```
