@@ -9,8 +9,8 @@ yum install subversion httpd mod_dav_svn
 ```
 mkdir -p /data/svn/
 cd /data/svn/
-svnadmin create kse-docs
-chown -R apache.apache kse-docs
+svnadmin create cka-repos
+chown -R apache.apache cka-repos
 ```
 
 3. 创建密码文件
@@ -60,10 +60,13 @@ location ^~ /svn/ {
 
 8. 浏览器访问
 ```
-https://your.domain/svn/kse-docs/
+https://your.domain/svn/cka-repos/
 ```
 
 9. 参考
 ```
 http://svnbook.red-bean.com/en/1.6/svn.serverconfig.httpd.html#svn.serverconfig.httpd.authz
 ```
+
+10. 其它
+[SVN推荐目录结构](https://versionsapp.com/documentation/about_svn_kc_trunktagbranch.html)
